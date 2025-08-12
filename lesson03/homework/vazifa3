@@ -1,0 +1,119 @@
+## 1. Create and Access List Elements
+##Create a list containing five different fruits and print the third fruit.
+
+mevalar = ["olma", "anor", "limon","nok", "mandarin"]
+print(mevalar[2])
+
+## 2. Concatenate Two Lists 
+## Create two lists of numbers and concatenate them into a single list.
+
+sonlar = [1,3,5,2,4]
+sonlar2 = [6,8,7,9,10]
+sonlar3 = sonlar + sonlar2
+sonlar3
+
+
+##3. Extract Elements from a List
+## Given a list of numbers, extract the first, middle, and last elements and store them in a new list.
+
+cars = ["BMW","honda", "mersedes", "BYD", "mazda"]
+cars2 = (cars[::2])
+print(cars2)
+
+
+##4. Convert List to Tuple
+## Create a list of your five favorite movies and convert it into a tuple.
+
+films = ["Matrix", "Taxi", "Baron", "Don", "Spartak"]
+films_tuple = (films)
+print(films_tuple)
+
+
+##5. Check Element in a List
+##Given a list of cities, check if "Paris" is in the list and print the result.
+
+cities = ["Tashkent", "New York", "Samarkand", "Paris", "Khiva"]
+if "Paris" in cities:
+    print("Bor")
+else:
+    print("yo'q")
+
+
+  ##6. Duplicate a List Without Using Loops
+##Create a list of numbers and duplicate it without using loops.
+
+sonlar = [1,3,2,6,4,7,5,9,8]
+sonlar2 = sonlar*2
+print(sonlar2)
+
+
+  ##7. Swap First and Last Elements of a List
+##Given a list of numbers, swap the first and last elements.
+
+numbers = [12,34,56,78,90]
+numbers[0], numbers[-1]=numbers[-1], numbers[0]
+print(numbers)
+
+
+  ##8. Slice a Tuple
+##Create a tuple of numbers from 1 to 10 and print a slice from index 3 to 7.
+
+mytuple = (1,2,3,4,5,6,7,8,9,10)
+print(mytuple[2:7])
+
+  ##9. Count Occurrences in a List
+## Create a list of colors and count how many times "blue" appears in the list.
+
+colors = ["red", "blue", "white", "pink", "black"]
+colors.count("blue")
+
+
+  ## 10. Find the Index of an Element in a Tuple
+## Given a tuple of animals, find the index of "lion".
+
+animals = ("rabbit", "pig", "tiger", "lion", "bear")
+print(animals[-2])
+
+
+  ## 11. Merge Two Tuples
+## Create two tuples of numbers and merge them into a single tuple.
+
+numbers = (1,3,5,7,9)
+numbers1 = (2,4,6,8,10)
+numbers2 = numbers + numbers1
+print(numbers2)
+
+  ## 12. Find the Length of a List and Tuple
+## Given a list and a tuple, find and print their lengths.
+
+list = [12,34,56,78,90]
+length = len(list)
+print(length)
+
+tuple = ("lion", 12,34,True, 56,78,90)
+length = len(tuple)
+print(length)
+
+  ## 13. Convert Tuple to List
+## Create a tuple of five numbers and convert it into a list.
+
+tuple1 = (1, 20, 3, 40, 5)
+list1 = list(tuple1)
+print(list1)
+
+  ## 14. Find Maximum and Minimum in a Tuple
+## Given a tuple of numbers, find and print the maximum and minimum values.
+
+sonlar = (15,12,15,17,48,23,32)
+eng_katta = max(sonlar)
+eng_kichik = min(sonlar)
+print("eng_katta_son:", eng_katta)
+print("eng_kichik_son:", eng_kichik)
+
+
+  ##  15. Reverse a Tuple
+## Create a tuple of words and print it in reverse order.
+
+mytuple = ('son', 'qiymat', 'katta', 'kichik', 'teng')
+mytuple_reversed = mytuple[::-1]
+print(mytuple_reversed)
