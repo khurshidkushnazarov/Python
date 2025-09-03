@@ -180,3 +180,231 @@ bst.add(7)
 
 print(bst.search(7))   # True
 print(bst.search(3))   # False
+
+
+# 6. Stack Data Structure
+# Write a Python program to create a class representing a stack data structure. Include methods for pushing and popping elements.
+
+
+class Stack:
+    def __init__(self):
+        self.items = []
+
+    def is_empty(self):
+        return len(self.items) == 0
+
+    def push(self, item):
+        self.items.append(item)
+        print(f"{item} стекка қўшилди.")
+
+    def pop(self):
+        if self.is_empty():
+            print("Стек бўш. Олиб ташлаш мумкин эмас.")
+            return None
+        removed_item = self.items.pop()
+        print(f"{removed_item} стекдан олиб ташланди.")
+        return removed_item
+
+    def peek(self):
+        if self.is_empty():
+            print("Стек бўш.")
+            return None
+        return self.items[-1]
+
+    def size(self):
+        return len(self.items)
+
+    def show(self):
+        print("Жорий стек:", self.items)
+
+stack = Stack()
+stack.push(10)
+stack.push(20)
+stack.push(30)
+stack.show()
+
+stack.pop()
+stack.show()
+
+
+# 7. Linked List Data Structure
+# Write a Python program to create a class representing a linked list data structure. Include methods for displaying linked list data, inserting, and deleting nodes.
+
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = new_node
+
+    def display(self):
+        current = self.head
+        if not current:
+            print("Рўйхат бўш.")
+            return
+        while current:
+            print(current.data, end=" -> ")
+            current = current.next
+        print("None")
+
+    def delete(self, data):
+        current = self.head
+        prev = None
+        while current:
+            if current.data == data:
+                if prev is None:
+                    self.head = current.next
+                else:
+                    prev.next = current.next
+                return
+            prev = current
+            current = current.next
+        print(f"{data} топилмади.")
+
+
+
+# 8. Shopping Cart Class
+# Write a Python program to create a class representing a shopping cart. Include methods for adding and removing items, and calculating the total price.
+
+class ShoppingCart:
+    def __init__(self):
+        self.items = []
+
+    def add_item(self, nomi, narxi):
+        self.items.append({"nomi": nomi, "narxi": narxi})
+        print(f"{nomi} ({narxi} сўм) саватчага қўшилди.")
+
+    def remove_item(self, nomi):
+        for item in self.items:
+            if item["nomi"] == nomi:
+                self.items.remove(item)
+                print(f"{nomi} саватчадан ўчирилди.")
+                return
+        print(f"{nomi} саватчада топилмади.")
+
+    def get_total(self):
+        total = sum(item["narxi"] for item in self.items)
+        return total
+
+    def show_cart(self):
+        if not self.items:
+            print("Саватча бўш.")
+        else:
+            print("Саватчадаги маҳсулотлар:")
+            for item in self.items:
+                print(f"- {item['nomi']} : {item['narxi']} сўм")
+            print(f"Жами нарх: {self.get_total()} сўм")
+
+
+
+# 9. Stack with Display
+# Write a Python program to create a class representing a stack data structure. Include methods for pushing, popping, and displaying elements.
+
+class Stack:
+    def __init__(self):
+        self.items = []
+
+    def is_empty(self):
+        return len(self.items) == 0
+
+    def push(self, element):
+        self.items.append(element)
+        print(f"{element} стекка қўшилди.")
+
+    def pop(self):
+        if self.is_empty():
+            print("Стек бўш, олиб ташлаб бўлмайди.")
+            return None
+        removed = self.items.pop()
+        print(f"{removed} стекдан олиб ташланди.")
+        return removed
+
+    def display(self):
+        if self.is_empty():
+            print("Стек бўш.")
+        else:
+            print("Стекдаги элементлар (охиридан бошлаб):")
+            for item in reversed(self.items):
+                print(item)
+
+
+# 10. Queue Data Structure
+# Write a Python program to create a class representing a queue data structure. Include methods for enqueueing and dequeueing elements.
+
+class Queue:
+    def __init__(self):
+        self.items = []
+
+    def enqueue(self, element):
+        self.items.append(element)
+        print(f"{element} навбатга қўшилди.")
+
+    def dequeue(self):
+        if not self.items:
+            print("Навбат бўш. Олиб ташлаб бўлмайди.")
+            return None
+        removed = self.items.pop(0)
+        print(f"{removed} навбатдан олиб ташланди.")
+        return removed
+
+    def display(self):
+        if not self.items:
+            print("Навбат бўш.")
+        else:
+            print("Навбатдаги элементлар:")
+            for item in self.items:
+                print(item)
+
+
+# 11. Bank Class
+# Write a Python program to create a class representing a bank. Include methods for managing customer accounts and transactions.
+
+
+class Bank:
+    def __init__(self):
+        self.accounts = {}  # {ism: balans}
+
+    def add_client(self, name):
+        if name not in self.accounts:
+            self.accounts[name] = 0
+            print(f"{name} мижоз қўшилди.")
+        else:
+            print(f"{name} аллақачон мавжуд.")
+
+    def deposit(self, name, amount):
+        if name in self.accounts:
+            self.accounts[name] += amount
+            print(f"{name} ҳисобига {amount} сўм қўшилди.")
+        else:
+            print(f"{name} мижоз топилмади.")
+
+    def withdraw(self, name, amount):
+        if name in self.accounts:
+            if self.accounts[name] >= amount:
+                self.accounts[name] -= amount
+                print(f"{name} ҳисобидан {amount} сўм ечилди.")
+            else:
+                print(f"{name} ҳисобида етарли маблағ йўқ.")
+        else:
+            print(f"{name} мижоз топилмади.")
+
+    def show_balance(self, name):
+        if name in self.accounts:
+            print(f"{name} ҳисоби: {self.accounts[name]} сўм")
+        else:
+            print(f"{name} мижоз топилмади.")
+
+
